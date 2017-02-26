@@ -3,14 +3,14 @@
   <head>
     <title>Splurty</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header class="row">
-      <div class="col-3">
+      <div class="col-3 logo-div">
         <%= link_to root_path, class: 'logo' do %>
           <div class="circle">
             <br />
@@ -44,14 +44,14 @@
             </button>
             <h4 class="modal-title" id="myModalLabel">Contribute Your Quote</h4>
           </div>
-          <%= simple_form_for Quote.new do |f| %>  
+          <%= simple_form_for Quote.new do |f| %>
             <div class="modal-body">
-            
+
               <%= f.input :saying, label: "What is the saying you want to add?", placeholder: "Being number two sucks." %>
               <br />
               <%= f.input :author, label: "Who is the author of the quote?", placeholder: "Andre Agassi" %>
-            </div>  
-            <div class="modal-footer">  
+            </div>
+            <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <%= f.submit 'Create', class: 'btn btn-danger' %>
             </div>
